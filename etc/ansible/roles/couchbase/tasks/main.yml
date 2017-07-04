@@ -1,0 +1,14 @@
+- name: Download Couchbase Server
+  get_url: url={{ couchbase.package.url }} dest=/tmp/{{ couchbase.package.file }}
+
+- name: Install Couchbase Server
+  command: dpkg -i /tmp/{{ couchbase.package.file }}
+
+- name: Clean up
+  file: path=/tmp/{{ couchbase.package.file }} state=absent
+
+- name: Wait for Couchbase Server to be alive
+  wait_for: port=8091 delay=5
+
+- name: Configure main node
+  shell: /opt/couchbase/bin/couchbase-cli cluster-init -c {{ couchbase.bind }}:8091 --cluster-init-username={{couchbase.admin_user}} --cluster-init-password={{couchbase.admin_password}} --cluster-init-port=8091 --cluster-init-ramsize={{couchbase.cluster_ram_quota}} -u {{couchbase.admin_user}} -p {{couchbase.admin_password}}
