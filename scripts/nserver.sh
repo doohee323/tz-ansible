@@ -8,7 +8,8 @@ source /vagrant/setup.rc
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get -y update
+apt-get update  -y 
+#apt-get upgrade -y
 apt-get install -y git
 apt-get install -y ansible
 apt-get install sshpass -y
@@ -24,6 +25,9 @@ cd /vagrant/etc/ansible
 ansible staging -m ping -u root
 ansible production -m ping -u root
 ansible all -a "free -m" -u root
+ansible all -a "/bin/echo hello"
+ansible all -m ping -u vagrant --sudo
+ansible all -m ping -u root --sudo --sudo-user vagrant
 
 ansible-playbook -i hosts staging.yml
 

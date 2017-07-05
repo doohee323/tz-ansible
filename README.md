@@ -16,6 +16,8 @@ Ansible server / client example on vagrant.
 
 # Site
 ```
+	https://github.com/ansible/ansible-examples
+	http://docs.ansible.com/ansible/list_of_all_modules.html
 	
 ```
 
