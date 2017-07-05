@@ -1,5 +1,4 @@
-# file: group_vars/all
+# file: group_vars/production
 ansible_connection: ssh
 ansible_ssh_user: root 
 ansible_ssh_pass: vagrant
-remote_user: root

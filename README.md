@@ -1,4 +1,4 @@
-a Ansible server / client example on vagrant.
+Ansible server / client example on vagrant.
 ==========================================================================
 
 # Features

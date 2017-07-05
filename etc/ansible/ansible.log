@@ -1,0 +1,92 @@
+2017-07-05 03:43:09,641 p=1607 u=root |  [1;35m [WARNING]: provided hosts list is empty, only localhost is available
+[0m
+2017-07-05 03:43:55,682 p=1630 u=root |  [0;32m192.168.82.170 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:43:55,727 p=1630 u=root |  [0;32m192.168.82.171 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:44:08,162 p=1706 u=root |  [0;32m192.168.82.170 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:44:08,168 p=1706 u=root |  [0;32m192.168.82.171 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:44:48,392 p=1740 u=root |  [0;32m192.168.82.170 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           2000         138        1693           3         168        1704
+Swap:          1023           0        1023
+[0m
+2017-07-05 03:44:48,395 p=1740 u=root |  [0;32m192.168.82.171 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           2000          53        1794           3         151        1791
+Swap:          1023           0        1023
+[0m
+2017-07-05 03:44:57,552 p=1775 u=root |  [0;32m192.168.82.170 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:44:57,578 p=1775 u=root |  [0;32m192.168.82.171 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:45:11,368 p=1809 u=root |  [0;32m192.168.82.170 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:45:11,380 p=1809 u=root |  [0;32m192.168.82.171 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+2017-07-05 03:45:15,964 p=1843 u=root |  [1;35m [WARNING]: Error when using <bound method CallbackModule.v2_playbook_on_play_start of </usr/lib/python2.7/dist-
+packages/ansible/plugins/callback/default.CallbackModule object at 0x7fece89bc9d0>>: 'NoneType' object has no attribute 'strip'
+[0m
+2017-07-05 03:45:15,976 p=1843 u=root |  TASK [setup] *******************************************************************
+2017-07-05 03:45:16,463 p=1843 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:45:16,470 p=1843 u=root |  TASK [nginx : Add Nginx repo] **************************************************
+2017-07-05 03:45:29,529 p=1843 u=root |  [0;31mfatal: [192.168.82.170]: FAILED! => {"changed": false, "cmd": "apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 8B3981E7A6852F782CC4951600A6F0A3C300EE8C", "failed": true, "msg": "gpg: requesting key C300EE8C from hkp server keyserver.ubuntu.com\ngpg: key C300EE8C: public key \"Launchpad Stable\" imported\ngpg: Total number processed: 1\ngpg:               imported: 1  (RSA: 1)\ngpg: no writable keyring found: eof\ngpg: error reading `[stdin]': general error\ngpg: import from `[stdin]' failed: general error\ngpg: Total number processed: 0", "rc": 1, "stderr": "gpg: requesting key C300EE8C from hkp server keyserver.ubuntu.com\ngpg: key C300EE8C: public key \"Launchpad Stable\" imported\ngpg: Total number processed: 1\ngpg:               imported: 1  (RSA: 1)\ngpg: no writable keyring found: eof\ngpg: error reading `[stdin]': general error\ngpg: import from `[stdin]' failed: general error\ngpg: Total number processed: 0\n", "stdout": "Executing: /tmp/tmp.99O2d0iQQT/gpg.1.sh --recv-keys\n--keyserver\nhkp://keyserver.ubuntu.com:80\n8B3981E7A6852F782CC4951600A6F0A3C300EE8C\n", "stdout_lines": ["Executing: /tmp/tmp.99O2d0iQQT/gpg.1.sh --recv-keys", "--keyserver", "hkp://keyserver.ubuntu.com:80", "8B3981E7A6852F782CC4951600A6F0A3C300EE8C"]}[0m
+2017-07-05 03:45:29,533 p=1843 u=root |  PLAY RECAP *********************************************************************
+2017-07-05 03:45:29,533 p=1843 u=root |  192.168.82.170             : ok=1    changed=0    unreachable=0    failed=1   
+2017-07-05 03:46:27,107 p=2111 u=root |  [1;35m [WARNING]: Error when using <bound method CallbackModule.v2_playbook_on_play_start of </usr/lib/python2.7/dist-
+packages/ansible/plugins/callback/default.CallbackModule object at 0x7f916baf69d0>>: 'NoneType' object has no attribute 'strip'
+[0m
+2017-07-05 03:46:27,120 p=2111 u=root |  TASK [setup] *******************************************************************
+2017-07-05 03:46:27,737 p=2111 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:46:27,743 p=2111 u=root |  TASK [nginx : Add Nginx repo] **************************************************
+2017-07-05 03:46:50,318 p=2111 u=root |  [0;33mchanged: [192.168.82.170][0m
+2017-07-05 03:46:50,322 p=2111 u=root |  TASK [nginx : Install Nginx] ***************************************************
+2017-07-05 03:49:06,473 p=2111 u=root |  [0;33mchanged: [192.168.82.170][0m
+2017-07-05 03:49:06,479 p=2111 u=root |  TASK [nginx : Check Nginx configs exist] ***************************************
+2017-07-05 03:49:06,587 p=2111 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:49:06,589 p=2111 u=root |  TASK [nginx : Remove default Nginx configs] ************************************
+2017-07-05 03:49:06,740 p=2111 u=root |  [0;33mchanged: [192.168.82.170][0m
+2017-07-05 03:49:06,743 p=2111 u=root |  TASK [nginx : Clone Nginx configs] *********************************************
+2017-07-05 03:51:12,287 p=2111 u=root |  [0;31mfatal: [192.168.82.170]: FAILED! => {"changed": false, "cmd": "/usr/bin/git ls-remote origin -h refs/heads/master", "failed": true, "msg": "fatal: unable to access 'https://github.com/A5hleyRich/wordpress-nginx.git/': gnutls_handshake() failed: The TLS connection was non-properly terminated.", "rc": 128, "stderr": "fatal: unable to access 'https://github.com/A5hleyRich/wordpress-nginx.git/': gnutls_handshake() failed: The TLS connection was non-properly terminated.\n", "stdout": "", "stdout_lines": []}[0m
+2017-07-05 03:51:12,291 p=2111 u=root |  PLAY RECAP *********************************************************************
+2017-07-05 03:51:12,291 p=2111 u=root |  192.168.82.170             : ok=5    changed=3    unreachable=0    failed=1   
+2017-07-05 03:58:19,241 p=4171 u=root |  [1;35m [WARNING]: Error when using <bound method CallbackModule.v2_playbook_on_play_start of </usr/lib/python2.7/dist-
+packages/ansible/plugins/callback/default.CallbackModule object at 0x7f218ac4d9d0>>: 'NoneType' object has no attribute 'strip'
+[0m
+2017-07-05 03:58:19,254 p=4171 u=root |  TASK [setup] *******************************************************************
+2017-07-05 03:58:19,846 p=4171 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:58:19,852 p=4171 u=root |  TASK [nginx : Add Nginx repo] **************************************************
+2017-07-05 03:58:20,028 p=4171 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:58:20,035 p=4171 u=root |  TASK [nginx : Install Nginx] ***************************************************
+2017-07-05 03:58:49,801 p=4171 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:58:49,805 p=4171 u=root |  TASK [nginx : Check Nginx configs exist] ***************************************
+2017-07-05 03:58:49,916 p=4171 u=root |  [0;32mok: [192.168.82.170][0m
+2017-07-05 03:58:49,919 p=4171 u=root |  TASK [nginx : Remove default Nginx configs] ************************************
+2017-07-05 03:58:49,948 p=4171 u=root |  [0;36mskipping: [192.168.82.170][0m
+2017-07-05 03:58:49,951 p=4171 u=root |  TASK [nginx : Clone Nginx configs] *********************************************
+2017-07-05 03:58:49,988 p=4171 u=root |  [0;36mskipping: [192.168.82.170][0m
+2017-07-05 03:58:49,991 p=4171 u=root |  TASK [nginx : Symlink default site] ********************************************
+2017-07-05 03:58:50,102 p=4171 u=root |  [0;33mchanged: [192.168.82.170][0m
+2017-07-05 03:58:50,106 p=4171 u=root |  TASK [nginx : Set Nginx user] **************************************************
+2017-07-05 03:58:50,135 p=4171 u=root |  [0;31mfatal: [192.168.82.170]: FAILED! => {"failed": true, "msg": "ERROR! 'username' is undefined"}[0m
+2017-07-05 03:58:50,139 p=4171 u=root |  RUNNING HANDLER [nginx : reload nginx] *****************************************
+2017-07-05 03:58:50,140 p=4171 u=root |  PLAY RECAP *********************************************************************
+2017-07-05 03:58:50,140 p=4171 u=root |  192.168.82.170             : ok=5    changed=1    unreachable=0    failed=1   

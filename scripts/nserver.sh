@@ -10,12 +10,31 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get -y update
 apt-get install -y git
-apt-add-repository -y ppa:ansible/ansible
 apt-get install -y ansible
-cd /home/vagrant
-git clone http://github.com/lekdw/book-dev-env.git
-chown -R vagrant:vagrant book-dev-env
-cd book-dev-env/ansible
+apt-get install sshpass -y
+
+ssh-keyscan -H 192.168.82.170 >> /home/vagrant/.ssh/known_hosts
+ssh-keyscan -H 192.168.82.171 >> /home/vagrant/.ssh/known_hosts
+chown vagrant:vagrant /home/vagrant/.ssh/known_hosts
+
+
+ssh-keyscan -H 192.168.82.170 >> /root/.ssh/known_hosts
+ssh-keyscan -H 192.168.82.171 >> /root/.ssh/known_hosts
+chown vagrant:vagrant /root/.ssh/known_hosts
+
+# change root password
+echo -e "vagrant\nvagrant" | passwd root
+sudo sed -i "s|PermitRootLogin prohibit-password|PermitRootLogin yes|g" /etc/ssh/sshd_config
+sudo sed -i "s|#PasswordAuthentication yes|PasswordAuthentication yes|g" /etc/ssh/sshd_config
+service ssh restart
+
+cd /vagrant/etc/ansible
+
+ansible staging -m ping -u root
+ansible production -m ping -u root
+
+ansible all -a "free -m" -u root
+
 ansible-playbook -i hosts site.yml
 
 exit 0

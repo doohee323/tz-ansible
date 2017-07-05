@@ -13,6 +13,11 @@ Vagrant.configure("2") do |config|
       node.vm.box = "bento/ubuntu-16.04"
       node.vm.hostname = "#{host_name}"
       node.vm.network :private_network, ip: host_ip
+      
+	node.ssh.username = 'root'
+	node.ssh.password = 'vagrant'
+	node.ssh.insert_key = 'true'      
+      
       node.vm.provision "shell", :path => File.join(File.dirname(__FILE__),"scripts/#{host_name}.sh"), :args => node.vm.hostname 
       
       node.vm.provider :virtualbox do |vb|

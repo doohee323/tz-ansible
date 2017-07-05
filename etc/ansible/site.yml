@@ -1,7 +1,10 @@
 - name: 
-  hosts: all
-  sudo: yes
+  hosts: staging
+  vars:
+#    username: root
+#    password: root
+#    public_key: ~/.ssh/id_rsa.pub
   roles:
-    - couchbase
-    - redis
-    - mysql
+    - nginx
+
+    
