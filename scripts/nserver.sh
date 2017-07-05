@@ -31,7 +31,7 @@ ansible all -m ping -u root --sudo --sudo-user vagrant
 
 ansible-playbook -i hosts staging.yml
 
-ansible-playbook -i hosts production.yml
+#ansible-playbook -i hosts production.yml
 
 exit 0
 
