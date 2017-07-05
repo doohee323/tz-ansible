@@ -13,15 +13,6 @@ apt-get install -y git
 apt-get install -y ansible
 apt-get install sshpass -y
 
-ssh-keyscan -H 192.168.82.170 >> /home/vagrant/.ssh/known_hosts
-ssh-keyscan -H 192.168.82.171 >> /home/vagrant/.ssh/known_hosts
-chown vagrant:vagrant /home/vagrant/.ssh/known_hosts
-
-
-ssh-keyscan -H 192.168.82.170 >> /root/.ssh/known_hosts
-ssh-keyscan -H 192.168.82.171 >> /root/.ssh/known_hosts
-chown vagrant:vagrant /root/.ssh/known_hosts
-
 # change root password
 echo -e "vagrant\nvagrant" | passwd root
 sudo sed -i "s|PermitRootLogin prohibit-password|PermitRootLogin yes|g" /etc/ssh/sshd_config
@@ -32,9 +23,17 @@ cd /vagrant/etc/ansible
 
 ansible staging -m ping -u root
 ansible production -m ping -u root
-
 ansible all -a "free -m" -u root
 
 ansible-playbook -i hosts site.yml
 
 exit 0
+
+ssh-keyscan -H 192.168.82.170 >> /home/vagrant/.ssh/known_hosts
+ssh-keyscan -H 192.168.82.171 >> /home/vagrant/.ssh/known_hosts
+chown vagrant:vagrant /home/vagrant/.ssh/known_hosts
+
+ssh-keyscan -H 192.168.82.170 >> /root/.ssh/known_hosts
+ssh-keyscan -H 192.168.82.171 >> /root/.ssh/known_hosts
+chown vagrant:vagrant /root/.ssh/known_hosts
+

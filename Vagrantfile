@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = "#{host_name}"
       node.vm.network :private_network, ip: host_ip
       
-	node.ssh.username = 'root'
+	node.ssh.username = 'vagrant'
 	node.ssh.password = 'vagrant'
 	node.ssh.insert_key = 'true'      
       

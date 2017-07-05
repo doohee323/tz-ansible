@@ -1,9 +1,5 @@
 - name: 
   hosts: staging
-  vars:
-#    username: root
-#    password: root
-#    public_key: ~/.ssh/id_rsa.pub
   roles:
     - nginx
 
