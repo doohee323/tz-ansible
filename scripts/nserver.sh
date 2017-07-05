@@ -25,7 +25,9 @@ ansible staging -m ping -u root
 ansible production -m ping -u root
 ansible all -a "free -m" -u root
 
-ansible-playbook -i hosts site.yml
+ansible-playbook -i hosts staging.yml
+
+ansible-playbook -i hosts production.yml
 
 exit 0
 

@@ -1,0 +1,6 @@
+- name: 
+  hosts: production
+  roles:
+    - nginx
+
+    
