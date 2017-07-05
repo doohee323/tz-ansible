@@ -9,7 +9,7 @@ source /vagrant/setup.rc
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get -y update
-apt-get install wget unzip build-essential libgd2-xpm-dev apache2-utils -y
+apt-get install wget -y
 
 # change root password
 echo -e "vagrant\nvagrant" | passwd root
